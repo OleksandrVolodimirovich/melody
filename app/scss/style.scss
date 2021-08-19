@@ -1,0 +1,105 @@
+@import "reset";
+@import "vars";
+@import "fonts";
+@import "global";
+
+.header{
+    background-color: $default;
+    padding: 12px 0;
+    border-bottom: 4px solid $accent;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-item{
+        text-align: center;
+    }
+    &-item + &-item{
+        margin-left: 40px;
+    }
+    &-link{
+        color: $white;;
+    }
+    &-linkword{
+        display: block;
+    }
+    &-contacts{
+        color: $white;
+        text-align: right;
+    }
+    &-text{
+        font-size: 14px;
+        line-height: 16px;
+        display: block;
+        margin-bottom: 4px;
+    }
+    &-phone{
+        @extend %roboto-700;
+        color: $white;
+        font-size: 17px;
+        line-height: 20px;
+    }
+}
+// end header
+.main{
+    padding-top: 54px;
+    &-wrapper{
+        display: flex;
+    }
+    &-info{
+        flex-grow: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-title{
+        @extend %BNregular-400;
+        font-size: 37px;
+        line-height: 37px;
+    }
+    &-counter-group{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.home-images path{
+    opacity: 0;
+    cursor: pointer;
+    &:hover{
+        opacity: 1;
+    }
+}
+.counter-button{
+    background-color: $white;
+    border: none;
+}
+.counter-arrow-down{
+    transform: rotateX(180deg);
+}
+.counter{
+    @extend %BNregular-400;
+    color: $count;
+    font-size: 124px;
+    line-height: 90px;
+    margin: 35px 0;
+}
+.button-primary{
+    background-color: $accent;
+    border-radius: 6px;
+    color: $white;
+    border: none;
+    padding: 16px 36px;
+    cursor: pointer;
+}
+
+
+@import "@media";
