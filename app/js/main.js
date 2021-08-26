@@ -5,16 +5,19 @@ $(document).ready(function () {
     var counterDown = $('.counter-down');
     var modal = $('.modal');
     var modalCloseButton = $('.modal-close-button');
+    var vievFlatsButton = $('.viev-flats');
 
+    
     floorPath.on('mouseover', function(){
         floorPath.removeClass('current-floor');
         currentFloor = $(this).attr('data-floor');
         $(".counter").text(currentFloor);
     });
 
+
     floorPath.on('click', toggleModal);
     modalCloseButton.on('click', toggleModal);
-
+    vievFlatsButton.on('click', toggleModal);
 
 
     counterUp.on('click', function(){
@@ -40,5 +43,6 @@ $(document).ready(function () {
     function toggleModal(){
         modal.toggleClass('modal-is-open');
     }
+
 
 });

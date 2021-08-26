@@ -88,7 +88,7 @@ path.current-floor{
 .counter-arrow-down{
     transform: rotateX(180deg);
 }
-.counter{
+.floor-counter{
     @extend %BNregular-400;
     color: $count;
     font-size: 124px;
@@ -128,6 +128,14 @@ path.current-floor{
         flex-grow: 1;
         display: flex;
         position: relative;
+        transform: translateY(-10%);
+        transition: transform .2s;
+        transition-delay: .2s;
+        opacity: 0;
+    }
+    &-is-open > &-dialog{
+        opacity: 1;
+        transform: translateY(0);
     }
     &-image{
         background-color: $bg-flat;
@@ -163,6 +171,12 @@ path.current-floor{
         cursor: pointer;
         border: none;
         background-color: $white;
+    }
+    &-flats path{
+        opacity: 0;
+    }
+    &-flats path:hover{
+        opacity: 1;
     }
 }
 .flat-list{
